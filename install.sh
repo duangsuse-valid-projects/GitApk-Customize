@@ -15,6 +15,7 @@ mkdir -p $GITEA/public/about/
 cp -f about.html $GITEA/public/about/index.html
 
 # 4 让 header 默认呈现绿色
+mkdir -p $GITEA/templates/base
 cp -f head.tmpl $GITEA/templates/base
 
 # 5 替换主页
