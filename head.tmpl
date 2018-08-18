@@ -127,9 +127,6 @@
 	<meta property="og:url" content="{{AppUrl}}" />
 	<meta property="og:description" content="{{MetaDescription}}">
 {{end}}
-{{if ne DefaultTheme "gitea"}}
-	<link rel="stylesheet" href="{{AppSubUrl}}/css/theme-{{DefaultTheme}}.css">
-{{end}}
 {{template "custom/header" .}}
 </head>
 <body>
@@ -141,11 +138,11 @@
 		{{template "custom/body_inner_pre" .}}
 
 		{{if not .PageIsInstall}}
-			<div class="ui top secondary stackable main menu following bar light">
+			<div class="ui top secondary stackable main menu following bar light" style="background-color: mediumseagreen;">
 				<div class="ui container" id="navbar">
 					<div class="item brand" style="justify-content: space-between;">
 						<a href="{{AppSubUrl}}/">
-							<img class="ui mini image" src="{{AppSubUrl}}/img/gitea-sm.png">
+							<img class="ui mini image" src="{{AppSubUrl}}/img/gitapk-sm.png">
 						</a>
 						<div class="ui basic icon button mobile-only" id="navbar-expand-toggle">
 							<i class="sidebar icon"></i>
@@ -177,7 +174,7 @@
 						<div class="right stackable menu">
 							<a href="{{AppSubUrl}}/notifications" class="item poping up" data-content='{{.i18n.Tr "notifications"}}' data-variation="tiny inverted">
 								<span class="text">
-									<i class="fitted octicon octicon-bell"></i>
+									<i class="fitted octicon octicon-inbox"></i>
 									<span class="sr-mobile-only">{{.i18n.Tr "notifications"}}</span>
 
 									{{if .NotificationUnreadCount}}
