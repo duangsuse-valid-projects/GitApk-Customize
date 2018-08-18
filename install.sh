@@ -1,5 +1,7 @@
 GITEA=/var/lib/gitea/custom
 
+mkdir $GITEA/public/img
+
 # 1 替换默认用户头像为灰色 Android 头像
 cp gitapk-default-avatar.png $GITEA/public/img/avatar_default.png
 
@@ -15,13 +17,13 @@ cp about.html $GITEA/public/about/index.html
 cp head.tmpl $GITEA/templates/base
 
 # 5 替换主页
+mkdir $GITEA/templates
 cp home.tmpl $GITEA/templates/
 
 # 6 提供 GeekApk 用户信息和包树预览额外 tab
 # WIP
 
 # 7 将 Gitea 默认图标替换为 Android 版的 Gitea 图标
-mkdir $GITEA/public/img
 cp gitapk-sm.png $GITEA/public/img
 
 unset GITEA
